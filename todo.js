@@ -72,12 +72,34 @@ var inputText = input.value.trim();
   if (event.keyCode === 13 && inputText !== "") {
       event.preventDefault();
       document.getElementById("list-of-subtask").innerHTML = "";
-      createTaskObject(inputText);
+      findDuplicateTaskName(inputText);
       input.value = "";
   } else {
       input.focus();
   }
 });
+
+/*
+function validateInputText(input) {
+   if(input.includes("(")) {
+        var endindex = input.indexof("(");
+        var properinput = input.substr(0,endindex);
+        return properinput;
+    } else {
+        return input;
+    }
+}*/
+
+
+function findDuplicateTaskName(inputText) {
+    const duplicateTask = toDoList.filter(task => task.taskname == inputText);
+    const duplicateSize = duplicateTask.length;
+    if (duplicateSize == 0) {
+        createTaskObject(inputText);
+    } else {
+        createTaskObject(inputText +"(" + duplicateSize + ")");
+    }
+}
 
 
 function createTaskObject (inputText) {
