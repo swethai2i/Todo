@@ -1,11 +1,9 @@
 <html>
     <head>
         <title>Login</title>
-        <link rel="stylesheet" href="todo.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/todo.css">
     </head>
     <body>
         <div class="container">
@@ -13,50 +11,47 @@
             <div class="header">
                <p>To Do</p>
                <input type = "text" placeholder="search" />
-               <i class="fa fa-user-circle-o settings-icon"></i>
-               <i class="fa fa-bullhorn settings-icon" aria-hidden="true"></i>
-               <i class="fa fa-question settings-icon"  aria-hidden="true"></i>
-               <i class="fa fa-cog settings-icon" aria-hidden="true"></i>
+               <div class="user-profile">
+
+                </div>
+                <div class="bullhorn">
+
+                </div>
+                <div class="question-icon">
+
+                    </div>
+               <div class="settings-icon">
+                    
+               </div>
+               
             </div>
 
             <!-- side nav -->
             <div id="mySidenav" class="sidenav">
                 <div id="navigator" role="button" aria-pressed="true" >&#9776</div>
-                <ul>
-                    <li>
                         <div class="text">
-                          <div class="taskicon"><i class="wi wi-day-sunny grey-icon"></i></div>
+                          <div class="task-sunicon"> </div>
                           <div class="sidenav-item">My Day</div>
                         </div>
-                    </li>
-                    <li>
                         <div class="text">
-                          <div class="taskicon"><i class="fa fa-star-o grey-icon"></i></div>
+                          <div class="task-staricon"> </div>
                           <div class="sidenav-item">Important</div>
                         </div>
-                    </li>
-                    <li>
                         <div class="text">
-                          <div class="taskicon"><i class="fa fa-calendar grey-icon"></i></div>
+                          <div class="task-calendericon"> </div>
                           <div class="sidenav-item">Planned</div>
                         </div>
-                    </li>
-                    <li>
                         <div class="text">
-                          <div class="taskicon"><i class="fa fa-user green-icon"></i></div>
+                          <div class="task-usericon"> </div>
                           <div class="sidenav-item">Assigned to Me</div>
                         </div>
-                    </li>
-                    <li>
                         <div class="text">
-                          <div class="taskicon"><i class="fa fa-home blue-icon"></i></div>
+                          <div class="task-homeicon"> </div>
                           <div class="sidenav-item">Tasks</div>
                         </div>
-                    </li>
-                    <li id="task-list">
+                    <div id="task-list">
                         <!--Task list was added -->
-                    </li>
-                 </ul>
+                    </div>
 
                 <input id="new-item" type="text" placeholder="New list" />
             </div>
@@ -67,7 +62,7 @@
                           <!-- Subtask List was added-->
                        </div>
                     <div class="input-container">
-                       <div class="subtask-icon" id="icon"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                       <div class="subtask-icon" id="icon"> </div>
                        <div class="subtask-text">
                           <input id="subtask-input" type="text" placeholder="Add task" />
                        </div>
@@ -78,7 +73,9 @@
                <div class="steps-header">
 
                    <div class="stepsHeading-container" id="editable-steps-head">
-                        <div class="subtask-icon" id="circle-icon"><i class="fa fa-circle-thin" aria-hidden="true"></i></div>
+                        <div class="dynamic-subtask-icon" id="circle-icon">
+                            
+                        </div>
                         <div class="subtask-text" id="subtask-heading">
                             Add step
                         </div>
@@ -92,28 +89,28 @@
 
 
                <div class="addToMyDay">
-                   <div class="sunIcon"><i class="wi wi-day-sunny grey-icon"></i></div>
+                   <div class="sunIcon"> </div>
                    <div class="myDayText">Add to My Day</div>
                </div>
 
 
                <div class="dateTasks">
                    <div class="outerDiv">
-                      <div class="dateTaskIcons"><i class="fa fa-clock-o grey-icon" aria-hidden="true"></i></div>
+                      <div class="remindIcon"> </div>
                       <div class="dateTasktext">Remind me</div>
                    </div>
                    <div class="outerDiv">
-                      <div class="dateTaskIcons"><i class="fa fa-calendar grey-icon" aria-hidden="true"></i></div>
+                      <div class="calenderIcon"> </div>
                       <div class="dateTasktext">Add due date</div>
                    </div>
                    <div class="outerDiv">
-                      <div class="dateTaskIcons"><i class="fa fa-calendar-plus-o grey-icon" aria-hidden="true"></i></div>
+                      <div class="repeatIcon"> </div>
                       <div class="dateTasktext">Repeat</div>
                    </div>
                </div>
 
                <div class="addToMyDay">
-                   <div class="sunIcon"><i class="fa fa-paperclip" aria-hidden="true"></i></div>
+                   <div class="paperclipIcon"> </div>
                    <div class="myDayText">Add file</div>
                </div>
 
@@ -122,13 +119,13 @@
                </div>
 
                <div class="bottomDiv">
-                  <div id="arrow"><i class="fa fa-arrow-right grey-icon" aria-hidden="true"></i></div>
+                  <div id="arrow"> </div>
                   <div class="bottomText">Created Today</div>
-                  <div class="trash"><i class="fa fa-trash grey-icon" aria-hidden="true"></i></div>
+                  <div class="trash" id="trashTask"> </div>
                </div>
 
             </div>
         </div>
-        <script src="todo.js"></script>
+        <script src="js/todo.js"></script>
     </body>
 </html>
