@@ -122,7 +122,7 @@ body, html {
 
 .sidenav .task-sunicon {
     display: inline-block;
-    margin: 18px 0px 5px 16px;
+    margin: 10px 0px 7px 16px;
     padding: 8px 0px 8px 0px;
     background-image: url(../img/sun.png);
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@ body, html {
 
 .sidenav .task-staricon {
     display: inline-block;
-    margin: 5px 0px 5px 16px;
+    margin: 10px 0px 7px 16px;
     padding: 8px 0px 8px 0px;
     background-image: url("../img/star.png");
     background-repeat: no-repeat;
@@ -144,7 +144,7 @@ body, html {
 
 .sidenav .task-calendericon {
     display: inline-block;
-    margin: 5px 0px 5px 16px;
+    margin: 10px 0px 7px 16px;
     padding: 8px 0px 8px 0px;
     background-image: url("../img/calender.png");
     background-repeat: no-repeat;
@@ -155,7 +155,7 @@ body, html {
 
 .sidenav .task-usericon {
     display: inline-block;
-    margin: 5px 0px 5px 16px;
+    margin: 10px 0px 7px 16px;
     padding: 8px 0px 8px 0px;
     background-image: url("../img/user-icon.png");
     background-repeat: no-repeat;
@@ -166,7 +166,7 @@ body, html {
 
 .sidenav .task-homeicon {
     display: inline-block;
-    margin: 5px 0px 5px 16px;
+    margin: 10px 0px 7px 16px;
     padding: 8px 0px 8px 0px;
     background-image: url("../img/home.png");
     background-repeat: no-repeat;
@@ -218,6 +218,17 @@ body, html {
     cursor: pointer;
 }
 
+.sidenav #group-task {
+    width: 23px;
+    background-image: url(../img/group-task.png);
+    background-repeat: no-repeat;
+    margin: 2px 0px -9px 0px;
+    background-size: contain;
+    height: 25px;
+    display: none;
+    cursor: pointer;
+}
+
 ::placeholder {
     color: #0178d7; 
 }
@@ -254,13 +265,14 @@ input:focus::placeholder {
 }
 
 .sidenav #navigator {
-    padding: 20px 0px 0px 16px;
+    padding: 10px 0px 10px 16px;
+    margin: 5px 0px 5px 0px;
     font-size: 20px;
     color: #56554f;
     cursor: pointer;
 }
 
-.sidenav .text:hover, .sidenav #navigator:hover, .sidenav input:hover, .header input:hover{
+.sidenav .text:hover, .sidenav #navigator:hover, .sidenav input:hover, .header input:hover, .sidenav #group-task:hover{
     background-color: white;
 }
 
@@ -415,7 +427,7 @@ input:focus::placeholder {
     display: inline-block;
     background-image: url(../img/sun.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 18px;
     background-position-x: 8px;
     background-position-y: 2px;
     padding: 8px 19px 16px 16px;
@@ -562,4 +574,41 @@ input:focus::placeholder {
     margin: 0px 0px 0px 18px;
     cursor: pointer;
     border-bottom: 1px solid #e0dede;
+}
+
+/* css style for js*/
+.sidenav-width-to-open {
+    width: 19%;
+}
+
+.sidenav-width-to-close {
+    width:3.2%;
+}
+
+.marginLeft-value-to-slide {
+    margin-left: 288px;
+}
+
+.marginLeft-value-to-hide {
+    margin-left: 47px;
+}
+
+.inline-display {
+    display: inline-block;
+}
+
+.none-display {
+    display: none;
+}
+
+.block-display {
+    display: block;
+}
+
+.text-linethrough {
+    text-decoration: line-through;
+}
+
+.text-none {
+    text-decoration: none;
 }
