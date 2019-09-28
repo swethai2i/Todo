@@ -103,9 +103,9 @@ function toggleLeftNavigator() {
 var slideToDoContent = getElementsByClassName("todo-list"); 
 var hideText = getElementsByClassName("sidenav-item");
   if (navigatorButton.getAttribute("aria-pressed") === "true") {
-    toggleNav(slideToDoContent, hideText, "19%", "288px", "inline-block", "false");
+    toggleNav(slideToDoContent, hideText, " sidenav sidenav-width-to-open", "todo-list marginLeft-value-to-slide", " sidenav-item inline-display", "false");
   } else {
-    toggleNav(slideToDoContent, hideText, "3.2%", "47px", "none", "true");
+    toggleNav(slideToDoContent, hideText, "sidenav sidenav-width-to-close", "todo-list marginLeft-value-to-hide", "sidenav-item none-display", "true");
    }
 }
 
@@ -119,13 +119,13 @@ var hideText = getElementsByClassName("sidenav-item");
  * @param {*} roleStatus 
  */
 function toggleNav(slideToDoContent, hideText, widthValue, marginLeftValue, displayStyle, roleStatus) {
-    getElementById("mySidenav").style.width = widthValue;
-    getElementById("group-task").style.display = displayStyle;
+    getElementById("mySidenav").setAttribute("class", widthValue);
+    getElementById("group-task").setAttribute("class", displayStyle);
       for(var i = 0; i < slideToDoContent.length; i++) {
-          slideToDoContent[i].style.marginLeft = marginLeftValue;
+          slideToDoContent[i].setAttribute("class", marginLeftValue);
       }
       for(var i = 0; i < hideText.length; i++) {
-          hideText[i].style.display = displayStyle; 
+          hideText[i].setAttribute("class", displayStyle);
       }
       navigatorButton.setAttribute("aria-pressed", roleStatus);
 }
@@ -135,14 +135,14 @@ function toggleNav(slideToDoContent, hideText, widthValue, marginLeftValue, disp
  * To open the right side navigation while clicking on the subtask
  */
 function openRightSideNav() {
-    getElementById("toggle-right").style.display = "block";
+    getElementById("toggle-right").setAttribute("class", "right-sidenav block-display");
 }
 
 /**
  * To close the right side navigation while clicking on the arrow symbol
  */
 function closeRightSideNav() {
-    getElementById("toggle-right").style.display = "none";
+    getElementById("toggle-right").setAttribute("class", "right-sidenav none-display");
 }
 
 
@@ -152,7 +152,7 @@ function closeRightSideNav() {
 function openLeftSideNav(){
     var slideToDoContent = getElementsByClassName("todo-list");
     var hideText = getElementsByClassName("sidenav-item");
-    toggleNav(slideToDoContent, hideText, "19%", "288px", "inline-block", "false");
+    toggleNav(slideToDoContent, hideText, " sidenav sidenav-width-to-open", "todo-list marginLeft-value-to-slide", " sidenav-item inline-display", "false");
 }
 
 /* To change icon to circle while focus-in and changes to plus icon while focus */
@@ -175,7 +175,7 @@ function getTaskInput(event) {
     if (event.keyCode === 13 && inputText !== "") {
         event.preventDefault();
         getElementById("list-of-subtask").innerHTML = "";
-        getElementById("toggle-right").style.display = "none";
+        getElementById("toggle-right").setAttribute("class", "right-sidenav none-display");
         findDuplicateTaskName(inputText);
         input.value = "";
     } else {
@@ -229,8 +229,8 @@ function addTaskStyle (inputText, id) {
     var taskIcon = createAnyElement("div");
     setAttributeForElement(taskIcon, id, "sidenav-list");
     var taskName = createAnyElement("div");
-    setAttributeForElement(taskName, id, "sidenav-item");
-    taskName.style.display = "inline-block";
+    setAttributeForElement(taskName, id, "sidenav-item inline-display");
+    //taskName.style.display = "inline-block";
     var textNode = createTextNode(inputText);
     appendChildToParent(taskName, textNode);
     appendChildToParent(taskList, taskIcon);
@@ -245,7 +245,7 @@ function addTaskStyle (inputText, id) {
  * @param {*} id 
  */
 function findTaskUsingId(id) {
-    console.log("clickkkkkkkkkk");
+    //console.log("clickkkkkkkkkk");
     getElementById(id).addEventListener("click", function(event) {
        var targetId = event.target.id;
        activeTask = toDoList.find(function(taskEvent) {
@@ -262,9 +262,9 @@ function findTaskUsingId(id) {
  * @param {*} activeTask 
  */
 function displaySubtasks(activeTask) {
-    console.log("clickkkkkkkkkk inside display");
+    //console.log("clickkkkkkkkkk inside display");
     getElementById("list-of-subtask").innerHTML = "";
-    getElementById("toggle-right").style.display = "none";
+    getElementById("toggle-right").setAttribute("class", "right-sidenav none-display");
     var showSubtask = activeTask.subTasks;
     //console.log("currentsubtask-----", showSubtask);
     for(var i = 0; i < showSubtask.length; i++) {
@@ -313,19 +313,20 @@ function createSubtask (subtaskInputText) {
  * @param {*} subtaskId 
  */
 function addSubtaskStyle (subtaskInputText, subtaskId) {
-   var subtaskList = createAnyElement("div");
-   setAttributeForElement(subtaskList, subtaskId, "subtask-container");
-   var subtaskIcon = createAnyElement("div");
-   setAttributeForElement(subtaskIcon, subtaskId, "dynamic-subtask-icon");
-   var subtaskName = createAnyElement("div");
-   setAttributeForElement(subtaskName, subtaskId, "subtask-text");
-   var subtasktextNode = createTextNode(subtaskInputText);
-   appendChildToParent(subtaskName, subtasktextNode);
-   appendChildToParent(subtaskList, subtaskIcon);
-   appendChildToParent(subtaskList, subtaskName);
-   var subtaskElement = getElementById("list-of-subtask");
-   appendChildToParent(subtaskElement, subtaskList);
-   findSubtaskUsingId(subtaskId, subtaskIcon, subtaskName);
+    console.log("clickkkkkkkkkk66666666");
+    var subtaskList = createAnyElement("div");
+    setAttributeForElement(subtaskList, subtaskId, "subtask-container");
+    var subtaskIcon = createAnyElement("div");
+    setAttributeForElement(subtaskIcon, subtaskId, "dynamic-subtask-icon");
+    var subtaskName = createAnyElement("div");
+    setAttributeForElement(subtaskName, subtaskId, "subtask-text");
+    var subtasktextNode = createTextNode(subtaskInputText);
+    appendChildToParent(subtaskName, subtasktextNode);
+    appendChildToParent(subtaskList, subtaskIcon);
+    appendChildToParent(subtaskList, subtaskName);
+    var subtaskElement = getElementById("list-of-subtask");
+    appendChildToParent(subtaskElement, subtaskList);
+    findSubtaskUsingId(subtaskId, subtaskIcon, subtaskName);
 }
 
 /**
@@ -334,13 +335,14 @@ function addSubtaskStyle (subtaskInputText, subtaskId) {
  * @param {*} subtaskId 
  */
 function checkedSubtaskStyle(subtaskInputText, subtaskId) {
+    console.log("clickkkkkkkkkk2322345554");
     var subtaskList = createAnyElement("div");
    setAttributeForElement(subtaskList, subtaskId, "subtask-container");
    var subtaskIcon = createAnyElement("div");
    setAttributeForElement(subtaskIcon, subtaskId, "dynamic-unchecked-subtask-icon");
    var subtaskName = createAnyElement("div");
-   setAttributeForElement(subtaskName, subtaskId, "subtask-text");
-   subtaskName.style.textDecoration = 'line-through';
+   setAttributeForElement(subtaskName, subtaskId, "subtask-text text-linethrough");
+   //subtaskName.style.textDecoration = 'line-through';
    var subtasktextNode = createTextNode(subtaskInputText);
    appendChildToParent(subtaskName, subtasktextNode);
    appendChildToParent(subtaskList, subtaskIcon);
@@ -363,10 +365,10 @@ function findSubtaskUsingId(subtaskId, subtaskIcon, subtaskName) {
             return subtaskEvent.id == targetId;
         });
         if ("dynamic-subtask-icon" === event.target.className) {
-            toggleContentCheckCircle(activeSubtask, subtaskIcon, subtaskName, "dynamic-unchecked-subtask-icon", 'line-through', true);
+            toggleContentCheckCircle(activeSubtask, subtaskIcon, subtaskName, "dynamic-unchecked-subtask-icon", "subtask-text text-linethrough", true);
         } else if ("dynamic-unchecked-subtask-icon" === event.target.className) {
             //console.log("Inside dynamic-unchecked-subtask-icon-- else if");
-            toggleContentCheckCircle(activeSubtask, subtaskIcon, subtaskName, "dynamic-subtask-icon", 'none', false);
+            toggleContentCheckCircle(activeSubtask, subtaskIcon, subtaskName, "dynamic-subtask-icon", "subtask-text text-none", false);
         } else {
             //console.log("Inside dynamic-unchecked-subtask-icon--- else");
             viewSubtask(activeSubtask);
@@ -388,11 +390,11 @@ function findSubtaskUsingId(subtaskId, subtaskIcon, subtaskName) {
 function toggleContentCheckCircle(activeSubtask, subtaskIcon, subtaskName, toggleClass, textStyle, subtaskStatus) {
    // console.log("======inside checkedsubtask --- if ====");
     subtaskIcon.setAttribute("class", toggleClass);
-    subtaskName.style.textDecoration = textStyle;
+    subtaskName.setAttribute("class", textStyle);
     activeSubtask.checked = subtaskStatus;
     getElementById("circle-icon").setAttribute("class", toggleClass);
     getElementById("subtask-heading").innerHTML = "" + activeSubtask.subtaskName + "";
-    getElementById("subtask-heading").style.textDecoration = textStyle;
+    getElementById("subtask-heading").setAttribute("class", textStyle);
     displaySteps(activeSubtask);
 }
 
@@ -402,9 +404,9 @@ function toggleContentCheckCircle(activeSubtask, subtaskIcon, subtaskName, toggl
  */
 function viewSubtask(activeSubtask) {
     if (!activeSubtask.checked) {
-        styleSubtaskCheckcircle("dynamic-subtask-icon", 'none', activeSubtask);
+        styleSubtaskCheckcircle("dynamic-subtask-icon", "subtask-text text-none", activeSubtask);
     } else {
-        styleSubtaskCheckcircle("dynamic-unchecked-subtask-icon", 'line-through', activeSubtask);
+        styleSubtaskCheckcircle("dynamic-unchecked-subtask-icon", "subtask-text text-linethrough", activeSubtask);
     }
 }
 
@@ -416,7 +418,7 @@ function viewSubtask(activeSubtask) {
  */
 function styleSubtaskCheckcircle(iconClass, textClass, activeSubtask) {
     getElementById("circle-icon").setAttribute("class", iconClass);
-    getElementById("subtask-heading").style.textDecoration = textClass;
+    getElementById("subtask-heading").setAttribute("class", textClass);
     getElementById("subtask-heading").innerHTML = "" + activeSubtask.subtaskName + "";
     displaySteps(activeSubtask);
 }
@@ -430,9 +432,9 @@ function styleSubtaskCheckcircle(iconClass, textClass, activeSubtask) {
 function toggleCircleIcon(event) {
    // console.log("======inside clicking stepheading====", event.target.className);
     if ("dynamic-subtask-icon" === event.target.className) {
-        toggleStepsHeadingCheckCircle("dynamic-subtask-icon", "dynamic-unchecked-subtask-icon", "line-through", true);
+        toggleStepsHeadingCheckCircle("dynamic-subtask-icon", "dynamic-unchecked-subtask-icon", "subtask-text text-linethrough", true);
     } else if ("dynamic-unchecked-subtask-icon" === event.target.className) {
-        toggleStepsHeadingCheckCircle("dynamic-unchecked-subtask-icon", "dynamic-subtask-icon", "none", false);
+        toggleStepsHeadingCheckCircle("dynamic-unchecked-subtask-icon", "dynamic-subtask-icon", "subtask-text text-none", false);
     }
 }
 
@@ -446,11 +448,11 @@ function toggleCircleIcon(event) {
 function toggleStepsHeadingCheckCircle(classNameToSelect, classNameToChange, textStyle, subtaskStatus) {
     //console.log("======inside clicking stepheading --- if ====");
     getElementById(activeSubtask.id).getElementsByClassName(classNameToSelect)[0].setAttribute("class", classNameToChange);
-    getElementById(activeSubtask.id).getElementsByClassName("subtask-text")[0].style.textDecoration = textStyle;
+    getElementById(activeSubtask.id).getElementsByClassName("subtask-text")[0].setAttribute("class", textStyle);
     activeSubtask.checked = subtaskStatus;
     getElementById("circle-icon").setAttribute("class", classNameToChange);
     getElementById("subtask-heading").innerHTML = "" + activeSubtask.subtaskName + "";
-    getElementById("subtask-heading").style.textDecoration = textStyle;
+    getElementById("subtask-heading").setAttribute("class", textStyle);
 }
 
 /**
@@ -529,8 +531,8 @@ function checkedStepsStyle (stepsInputText, stepId) {
     var stepIcon = createAnyElement("div");
     setAttributeForElement(stepIcon, stepId, "dynamic-unchecked-subtask-icon");
     var stepName = createAnyElement("div");
-    setAttributeForElement(stepName, stepId, "subtask-text");
-    stepName.style.textDecoration = 'line-through';
+    setAttributeForElement(stepName, stepId, "subtask-text text-linethrough");
+   // stepName.style.textDecoration = 'line-through';
     var steptextNode = createTextNode(stepsInputText);
     appendChildToParent(stepName, steptextNode);
     appendChildToParent(stepList, stepIcon);
@@ -570,11 +572,11 @@ function findStepUsingId(stepId, stepIcon, stepName) {
 function checkedStep(activeStep, stepIcon, stepName) {
     if (!activeStep.checked) {
         stepIcon.setAttribute("class", "dynamic-unchecked-subtask-icon");
-        stepName.style.textDecoration = 'line-through';
+        stepName.setAttribute("class", "subtask-text text-linethrough");
         activeStep.checked = true;
     } else {
         stepIcon.setAttribute("class","dynamic-subtask-icon");
-        stepName.style.textDecoration = 'none';
+        stepName.setAttribute("class", "subtask-text text-none");
         activeStep.checked = false;
     }
 }
@@ -586,7 +588,7 @@ function checkedStep(activeStep, stepIcon, stepName) {
 function updateSubtask(event) {
     var stepHeading = getElementById("subtask-heading");
     stepHeading.contentEditable = "true";
-    stepHeading.style.cssText = 'outline: none; border:1px solid black;';
+    stepHeading.setAttribute("class", "subtask-text update-active");
     updateSubtaskHeading(stepHeading);
 }
 
@@ -603,7 +605,7 @@ function updateSubtaskHeading(stepHeading) {
             getElementById(activeSubtask.id).getElementsByClassName("subtask-text")[0].innerHTML = "" + stepHeadingInput + "";
             displaySubtasks(activeTask);
             stepHeading.contentEditable = "false";
-            stepHeading.style.cssText = 'outline: none; border:none;';
+            stepHeading.setAttribute("class", "subtask-text update-inactive");
         } else {
             stepHeading.focus();
         }
@@ -614,8 +616,8 @@ function deleteSubtask() {
     var result = confirm("" + activeSubtask.subtaskName +" will be permanently deleted. You won't be able to undo this action. Do you want to delete ?");
     if (result) {
         activeSubtask.isDeleted = true;
-        getElementById(activeSubtask.id).style.display = "none";
-        getElementById("toggle-right").style.display = "none";
+        getElementById(activeSubtask.id).setAttribute("class", "none-display");
+        getElementById("toggle-right").setAttribute("class", "right-sidenav none-display");
         displaySubtasks(activeTask);
         deleteSteps(activeSubtask);
     } else {

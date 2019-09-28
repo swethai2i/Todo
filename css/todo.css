@@ -176,7 +176,7 @@ body, html {
 }
 
 .sidenav .sidenav-item {
-    display: none;
+    /*display: none;*/
     color: #56554f;
     font-size: 15px;
     vertical-align: super;
@@ -225,7 +225,7 @@ body, html {
     margin: 2px 0px -9px 0px;
     background-size: contain;
     height: 25px;
-    display: none;
+    /*display: none;*/
     cursor: pointer;
 }
 
@@ -353,7 +353,7 @@ input:focus::placeholder {
 
 .subtask-text {
     color: #0178d7;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 15px;
     width: 210px;
     margin: 10px 0px 10px 15px;
@@ -392,7 +392,7 @@ input:focus::placeholder {
     height: 93%;
     background-color: #f5f5f5;
     margin-top: 51px;
-    display: none;
+    /*display: none;*/
 }
 
 .steps-header {
@@ -611,4 +611,14 @@ input:focus::placeholder {
 
 .text-none {
     text-decoration: none;
+}
+
+.update-active {
+    outline: none;
+    border: 1px solid black;
+}
+
+.update-inactive {
+    outline: none;
+    border: none;
 }
