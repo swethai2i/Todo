@@ -397,7 +397,7 @@ input:focus::placeholder {
 
 .steps-header {
     border: 1px solid #e0dede;
-    margin: 10px;
+    margin: 10px 10px 10px 0px;
     background-color: white;
 }
 
@@ -621,4 +621,8 @@ input:focus::placeholder {
 .update-inactive {
     outline: none;
     border: none;
+}
+
+.right-scroll {
+    overflow-y: auto;
 }
