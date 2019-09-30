@@ -1,0 +1,628 @@
+@font-face {
+font-family: "segoe";
+src: url("../Segoe UI.ttf");
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    font-family: segoe;
+    display: flex;
+}
+
+.header {
+    position: fixed;
+    /* border: 1px solid green; */
+    background-image: url("../img/menu-logo.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 14px;
+    background-position-y: 15px;
+    background-color: #0178d7;
+    padding: 10px;
+    width: 99%;
+    height: 4%;
+}
+
+.header p {
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+    margin: 4px 0px 0px 42px;
+    cursor: pointer;
+}
+
+.header input {
+    margin-left: 29%;
+    border: none;
+    font-size: 14px;
+    background-image: url("../img/search-icon.png");
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position-x: 7px;
+    background-position-y: 7px;
+    background-color: #c4dcf7;
+    outline: none;
+    padding-left: 37px;
+    height: 34px;
+    border-radius: 3px;
+    width: 400px;
+    cursor: pointer;
+}
+
+.header .settings-icon {
+    background-image: url(../img/settings.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 6px;
+    background-position-y: 5px;
+    width: 20px;
+    height: 20px;
+    padding: 5px 15px 5px 10px;
+    float: right;
+    cursor: pointer;
+}
+
+.header .question-icon {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background-image: url(../img/question.png);
+    background-repeat: no-repeat;
+    background-position-x: 6px;
+    background-position-y: 5px;
+    background-size: 20px;
+    padding: 5px 15px 5px 10px;
+    cursor: pointer;
+}
+
+.header .bullhorn {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background-image: url(../img/bullhorn.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 6px;
+    background-position-y: 5px;
+    padding: 5px 15px 5px 10px;
+    cursor: pointer;
+}
+
+.header .user-profile {
+    width: 20px;
+    height: 20px;
+    float: right;
+    background-image: url(../img/user-profile.png);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position-x: 6px;
+    background-position-y: 4px;
+    padding: 5px 15px 5px 10px;
+    cursor: pointer;
+}
+
+.sidenav {
+    width: 3.2%;
+    height: 92%;
+    position: fixed;
+    /* border: 1px solid black; */
+    top: 52px;
+    left: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    padding-top: 14px;
+    transition: 0.2s;
+}
+
+.sidenav .task-sunicon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url(../img/sun.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    cursor: pointer;
+}
+
+.sidenav .task-staricon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../img/star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .task-calendericon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../img/calender.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .task-usericon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../img/user-icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .task-homeicon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../img/home.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .sidenav-item {
+    /*display: none;*/
+    color: #56554f;
+    font-size: 15px;
+    vertical-align: super;
+    margin: 0px 0px 0px 16px;
+    cursor: pointer;
+}
+
+.sidenav #task-list {
+    margin: 10px 0px 0px 0px;
+}
+
+.sidenav .black-text:focus {
+    color: #42484a;
+    font-weight: bold;
+}
+
+.sidenav .blue-text:focus {
+    color: #0178d7;
+    font-weight: bold;
+}
+
+.sidenav .green-text:focus {
+    color: #82ad59;
+    font-weight: bold;
+}
+
+.sidenav input {
+    margin: 4px 0px 0px 0px;
+    font-size: 15px;
+    padding: 10px 0px 10px 50px;
+    background-image: url("../img/plus-icon.png");
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 12px;
+    background-position-y: 8px;
+    border-style: none;
+    background-color: #f4f4f4;
+    outline: none;
+    cursor: pointer;
+}
+
+.sidenav #group-task {
+    width: 23px;
+    background-image: url(../img/group-task.png);
+    background-repeat: no-repeat;
+    margin: 2px 0px -9px 0px;
+    background-size: contain;
+    height: 25px;
+    /*display: none;*/
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #0178d7; 
+}
+
+input:focus::placeholder {
+    color: #56554f;
+}
+
+.grey-icon {
+   color: #56554f;
+}
+
+.green-icon {
+   color: #82ad59;
+}
+
+.blue-icon {
+  color: #0178d7;
+}
+
+.sidenav-list {
+    display: inline-block;
+    margin: 6px 0px 0px 15px;
+    padding: 0px 0px 5px 0px;
+    padding: -1px 0px 5px 0px;
+    background-image: url(../img/task-list.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 2px;
+    background-position-y: 8px;
+    width: 19px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.sidenav #navigator {
+    padding: 10px 0px 10px 16px;
+    margin: 5px 0px 5px 0px;
+    font-size: 20px;
+    color: #56554f;
+    cursor: pointer;
+}
+
+.sidenav .text:hover, .sidenav #navigator:hover, .sidenav input:hover, .header input:hover, .sidenav #group-task:hover{
+    background-color: white;
+}
+
+.todo-list {
+    width: 100%;
+    height: 93%;
+    margin-top: 51px;
+    margin-left: 47px;
+   /* border: 1px solid #bd154e;*/
+}
+
+.todo-list p {
+    /*border: 1px solid black;*/
+    margin: 25px 0px 15px 33px;
+    color: #0178d7;
+    font-size: 20px;
+}
+
+.todo-content {
+    /*border: 1px groove red;*/
+    overflow-y: auto;
+    height: 91%;
+    width: 100%;
+}
+
+.subtask-icon {
+    background-image: url("../img/plus-icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    display: inline-block;
+    margin: 15px 0px 15px 14px;
+}
+
+.subtask-icon-circle {
+    background-image: url("../img/dynamic-circle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    display: inline-block;
+    margin: 15px 0px 15px 14px;
+}
+
+.dynamic-subtask-icon {
+    background-image: url("../img/dynamic-circle.png");
+    background-repeat: no-repeat;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    /*border: 1px solid black;*/
+    height: 23px;
+    background-size: contain;
+    width: 20px;
+    display: inline-block;
+    margin: 10px 0px -7px 13px;
+}
+
+.dynamic-unchecked-subtask-icon {
+    background-image: url("../img/dynamic-checked-circle.png");
+    background-repeat: no-repeat;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    /*border: 1px solid black;*/
+    height: 23px;
+    background-size: contain;
+    width: 20px;
+    display: inline-block;
+    margin: 10px 0px -7px 13px;
+}
+
+.dynamic-subtask-text {
+    color: #0178d7;
+    display: inline-block;
+    font-size: 15px;
+    width: 210px;
+    margin: 10px 0px 10px 6px;
+    padding: 4px 0px 0px 0px;
+}
+
+.subtask-text {
+    color: #0178d7;
+    /*display: inline-block;*/
+    font-size: 15px;
+    width: 210px;
+    margin: 10px 0px 10px 15px;
+    padding: 4px 0px 0px 0px;
+}
+
+#subtask-input {
+    outline: none;
+    border-style: none;
+    font-size: 14px;
+    padding: 5px 0px 5px 0px;
+}
+
+.input-container {
+    display: flex;
+    width: 96%;
+    border-bottom: 1px solid #e0dede;
+    margin: 0px 0px 0px 18px;
+}
+
+/* subtask container has to hover */
+.subtask-container {
+    display: flex;
+    width: 96%;
+    border-bottom: 1px solid #e0dede;
+    margin: 0px 0px 0px 18px;
+    cursor: pointer;
+}
+
+.subtask-container:hover {
+    background-color:#f4f4f4;;
+}
+
+.right-sidenav {
+    width: 23%;
+    height: 93%;
+    background-color: #f5f5f5;
+    margin-top: 51px;
+    /*display: none;*/
+}
+
+.steps-header {
+    border: 1px solid #e0dede;
+    margin: 10px 10px 10px 0px;
+    background-color: white;
+}
+
+.right-sidenav #new-steps {
+    margin: 8px 0px 0px 0px;
+    font-size: 15px;
+    padding: 10px 0px 10px 50px;
+    background-image: url("../img/plus-icon.png");
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 12px;
+    background-position-y: 8px;
+    border-style: none;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+}
+
+.right-sidenav .addToMyDay {
+    border: 1px solid #e0dede;
+    margin: 10px;
+    height: 6.5%;
+    background-color: white;
+}
+
+.right-sidenav .addToMyDay .sunIcon {
+    display: inline-block;
+    background-image: url(../img/sun.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 8px;
+    background-position-y: 2px;
+    padding: 8px 19px 16px 16px;
+    margin: 9px 0px 0px 6px;
+    cursor: pointer;
+}
+
+.right-sidenav .addToMyDay .paperclipIcon {
+    display: inline-block;
+    background-image: url(../img/attach.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 8px;
+    background-position-y: 2px;
+    padding: 8px 19px 16px 16px;
+    margin: 9px 0px 0px 6px;
+    cursor: pointer;
+}
+
+.right-sidenav .addToMyDay .myDayText {
+    display: inline-block;
+    font-size: 15px;
+    color: #56554f;
+    vertical-align: super;
+}
+
+.right-sidenav .dateTasks {
+    border: 1px solid #e0dede;
+    margin: 10px;
+    height: 20%;
+    background-color: white;
+}
+
+.right-sidenav .dateTasks .outerDiv {
+    display: flex;
+    height: 33%;
+}
+
+.right-sidenav .dateTasks .remindIcon {
+    background-image: url(../img/alarm.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 8px;
+    background-position-y: 18px;
+    padding: 0px 16px 0px 16px;
+    margin: 0px 9px 0px 5px;
+    cursor: pointer;
+}
+
+.right-sidenav .dateTasks .calenderIcon {
+    background-image: url(../img/calender.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 8px;
+    background-position-y: 18px;
+    padding: 0px 16px 0px 16px;
+    margin: 0px 9px 0px 5px;
+    cursor: pointer;
+}
+
+.right-sidenav .dateTasks .repeatIcon {
+    background-image: url(../img/calender.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 8px;
+    background-position-y: 18px;
+    padding: 0px 16px 0px 16px;
+    margin: 0px 9px 0px 5px;
+    cursor: pointer;
+}
+
+.right-sidenav .dateTasks .dateTaskText {
+    color: #56554f;
+    font-size: 15px;
+    line-height: 56px;
+    height: 100%;
+    border-bottom: 1px solid rgba(233,233,233, 0.8);
+    width: 294px;
+    vertical-align: middle;
+}
+
+.right-sidenav .notes {
+    border: 1px solid #e0dede;
+    margin: 10px;
+    background-color: white;
+}
+
+.right-sidenav #input-notes {
+    font-size: 15px;
+    font-family: arial;
+    padding: 14px 0px 0px 15px;
+    border-style: none;
+    height: 12%;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    resize: none;
+}
+
+.right-sidenav .bottomDiv {
+    border: 1px solid #e0dede;
+    margin: 222px 0px 0px 0px;
+    display: flex;
+}
+
+.right-sidenav .bottomDiv #arrow {
+    background-image: url(../img/close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 1px;
+    background-position-y: 0px;
+    margin: 6px 8px 8px 18px;
+    width: 33px;
+    height: 23px;
+}
+
+.right-sidenav .bottomDiv .bottomText {
+    margin: 13px 73px 0px 80px;
+    color: #56554f;
+    font-size: 11px;
+}
+
+.right-sidenav .bottomDiv .trash {
+    background-image: url(../img/trash.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    margin: 8px 0px 0px 28px;
+    height: 20px;
+    width: 20px;
+}
+
+.stepsHeading-container {
+    display: flex;
+    width: 90%;
+    margin: 0px 0px 0px 18px;
+    cursor: pointer;
+}
+
+.steps-container {
+    display: flex;
+    width: 90%;
+    margin: 0px 0px 0px 18px;
+    cursor: pointer;
+    border-bottom: 1px solid #e0dede;
+}
+
+/* css style for js*/
+.sidenav-width-to-open {
+    width: 19%;
+}
+
+.sidenav-width-to-close {
+    width:3.2%;
+}
+
+.marginLeft-value-to-slide {
+    margin-left: 288px;
+}
+
+.marginLeft-value-to-hide {
+    margin-left: 47px;
+}
+
+.inline-display {
+    display: inline-block;
+}
+
+.none-display {
+    display: none;
+}
+
+.block-display {
+    display: block;
+}
+
+.text-linethrough {
+    text-decoration: line-through;
+}
+
+.text-none {
+    text-decoration: none;
+}
+
+.update-active {
+    outline: none;
+    border: 1px solid black;
+}
+
+.update-inactive {
+    outline: none;
+    border: none;
+}
+
+.right-scroll {
+    overflow-y: auto;
+}
