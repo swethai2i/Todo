@@ -1,0 +1,43 @@
+<div id="mySidenav" class="sidenav" [ngClass]="status ? 'sidenav-width-to-open' : 'sidenav'">
+    <div id="navigator" role="button" (click)=toggleLeftNavigator()>&#9776;</div>
+    <div class="text">
+        <div class="task-sunicon"> </div>
+        <div *ngIf="status" class="sidenav-item">My Day</div>
+    </div>
+    <div class="text">
+        <div class="task-staricon"> </div>
+        <div *ngIf="status" class="sidenav-item">Important</div>
+    </div>
+    <div class="text">
+        <div class="task-calendericon"> </div>
+        <div *ngIf="status" class="sidenav-item">Planned</div>
+    </div>
+    <div class="text">
+        <div class="task-usericon"> </div>
+        <div *ngIf="status" class="sidenav-item">Assigned to Me</div>
+    </div>
+    <div id="Tasks" class="text">
+        <div id="Tasks" class="task-homeicon"> </div>
+        <div *ngIf="status" id="Tasks" class="sidenav-item">Tasks</div>
+    </div>
+    <div id="task-list">
+        <div *ngFor="let task of tasks">
+            <div class="text">
+                <div class="sidenav-list">
+                    
+                </div>
+                <div *ngIf="status" class="sidenav-item">
+                    {{task.taskname}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="sidnav-input-plus" [class.inactive]="status" (click)=toggleLeftNavigator()> </div>
+    <input #input *ngIf="status" type="text" placeholder="New list" (keyup.enter) = createTask(input)/>
+    
+        <div *ngIf="status" id="group-task">
+
+        </div>
+    </div>
+</div>

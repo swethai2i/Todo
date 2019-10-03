@@ -1,0 +1,203 @@
+.sidenav {
+    width: 50px;
+    height: 736px;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    float: left;
+    padding-top: 14px;
+    transition: 0.2s;
+}
+
+.sidenav .task-sunicon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../../assets/img/sun.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    cursor: pointer;
+}
+
+.sidenav .task-staricon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../../assets/img/star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .task-calendericon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../../assets/img/calender.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .task-usericon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../../assets/img/user-icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .task-homeicon {
+    display: inline-block;
+    margin: 10px 0px 7px 16px;
+    padding: 8px 0px 8px 0px;
+    background-image: url("../../assets/img/home.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    cursor: pointer;
+}
+
+.sidenav .sidenav-item {
+    display: inline-block;
+    color: #56554f;
+    font-size: 15px;
+    vertical-align: super;
+    margin: 0px 0px 0px 16px;
+    cursor: pointer;
+}
+
+.sidenav #task-list {
+    margin: 10px 0px 0px 0px;
+}
+
+.sidenav .black-text:focus {
+    color: #42484a;
+    font-weight: bold;
+}
+
+.sidenav .blue-text:focus {
+    color: #0178d7;
+    font-weight: bold;
+}
+
+.sidenav .green-text:focus {
+    color: #82ad59;
+    font-weight: bold;
+}
+
+.sidnav-input-plus {
+    background-image: url("../../assets/img/plus-icon.png");
+    background-repeat: no-repeat;
+    /* border: 1px solid red; */
+    width: 20px;
+    height: 31px;
+    background-size: contain;
+    display: inline-block;
+    margin: 0px 0px 0px 13px;
+    background-position-y: 6px;
+}
+
+.sidenav input {
+    margin: 4px 0px 0px 0px;
+    font-size: 15px;
+    padding: 10px 0px 10px 20px;
+    vertical-align: text-bottom;
+    border-style: none;
+    background-color: #f4f4f4;
+    outline: none;
+    cursor: pointer;
+}
+
+.sidenav #group-task {
+    width: 23px;
+    background-image: url("../../assets/img/group-task.png");
+    background-repeat: no-repeat;
+    /* margin: 2px 0px -9px 0px; */
+    background-size: contain;
+    display: inline-block;
+    height: 25px;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #0178d7; 
+}
+
+input:focus::placeholder {
+    color: #56554f;
+}
+
+.grey-icon {
+   color: #56554f;
+}
+
+.green-icon {
+   color: #82ad59;
+}
+
+.blue-icon {
+  color: #0178d7;
+}
+
+.sidenav-list {
+    display: inline-block;
+    margin: 6px 0px 0px 15px;
+    padding: 0px 0px 5px 0px;
+    padding: -1px 0px 5px 0px;
+    background-image: url("../../assets/img/task-list.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 2px;
+    background-position-y: 8px;
+    width: 19px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.sidenav #navigator {
+    padding: 10px 0px 10px 16px;
+    margin: 5px 0px 5px 0px;
+    font-size: 20px;
+    color: #56554f;
+    cursor: pointer;
+}
+
+.sidenav .text:hover, .sidenav #navigator:hover, .sidenav input:hover, .header input:hover, .sidenav #group-task:hover{
+    background-color: white;
+}
+
+.none-display {
+    display: none;
+}
+
+/* css style for js*/
+.sidenav-width-to-open {
+    width: 20%;
+    display: inline-block;
+}
+
+.sidenav-width-to-close {
+    width:3.2%;
+}
+
+.marginLeft-value-to-slide {
+    margin-left: 288px;
+}
+
+.marginLeft-value-to-hide {
+    margin-left: 47px;
+}
+
+.inline-display {
+    display: inline-block;
+}
+
+.inactive {
+    pointer-events: none;
+}
