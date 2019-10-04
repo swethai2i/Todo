@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { tasks } from '../tasks';
+import { CenterContentComponent } from '../center-content/center-content.component';
 
 @Component({
   selector: 'app-leftsidenav',
@@ -9,6 +10,7 @@ import { tasks } from '../tasks';
 export class LeftsidenavComponent implements OnInit {
   status : boolean = false;
   tasks = tasks;
+  @Input() middleContainer : CenterContentComponent;
   
   constructor() {
   }
@@ -26,6 +28,8 @@ export class LeftsidenavComponent implements OnInit {
       var inputText = this.findDuplicateTaskName(inputText);
       var task = {taskname: inputText, id: Date.now(), subTasks: []};
       tasks.push(task);
+      this.displayTask(task);
+      console.log(tasks);
       input.value = '';
     } else {
       input.focus();
@@ -53,4 +57,9 @@ findDuplicateTaskName(inputText) {
     return (inputText +"(" + duplicateSize + ")");
   }
 }
+
+displayTask(task) {
+  this.middleContainer.displaySubtask(task);
+}
+
 }

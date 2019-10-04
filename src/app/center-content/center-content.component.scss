@@ -1,5 +1,4 @@
 .todo-list {
-    background-color: violet;
     float: left;
 }
 
@@ -13,7 +12,6 @@
 .todo-content {
     overflow-y: auto;
     height: 686px;
-    background-color: silver;
     width: 1110px;
 }
 
@@ -103,4 +101,8 @@
 
 .subtask-container:hover {
     background-color:#f4f4f4;;
+}
+
+.text-linethrough {
+    text-decoration: line-through;
 }

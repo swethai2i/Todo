@@ -2,7 +2,6 @@
     width: 370px;
     height: 750px;
     float: right;
-    background-color: royalblue;
     /*display: none;*/
 }
 
@@ -23,6 +22,19 @@
     width: 20px;
     display: inline-block;
     margin: 10px 0px -7px 0px;
+}
+
+.dynamic-unchecked-subtask-icon {
+    background-image: url("../../assets/img/dynamic-checked-circle.png");
+    background-repeat: no-repeat;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    /*border: 1px solid black;*/
+    height: 23px;
+    background-size: contain;
+    width: 20px;
+    display: inline-block;
+    margin: 10px 0px -7px 13px;
 }
 
 .subtask-text {
@@ -213,4 +225,8 @@
 
 .none-display {
     display: none;
+}
+
+.text-linethrough {
+    text-decoration: line-through;
 }

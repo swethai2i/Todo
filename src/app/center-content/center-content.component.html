@@ -1,13 +1,22 @@
 <div #todoList class="todo-list">
-    <p id="content-list">Tasks ...</p>
+    <p id="content-list">{{activeTask.taskname}}</p>
     <div class="todo-content">
         <div id="list-of-subtask">
-            <!-- Subtask List was added-->
+            <div *ngFor="let subtask of activeTask.subTasks" (click)=viewSteps(subtask)>
+                <div class="subtask-container">
+                    <div class="dynamic-subtask-icon" [ngClass]="subtask.checked ? 'dynamic-unchecked-subtask-icon' : 'dynamic-subtask-icon'" (click)=checkedSubtask(subtask)>
+
+                    </div>
+                    <div class="subtask-text" [ngClass]="subtask.checked ? 'text-linethrough' : 'subtask-text'" >
+                        {{subtask.subtaskName}}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="input-container">
-            <div class="subtask-icon" id="icon"> </div>
+            <div class="subtask-icon" id="icon" [ngClass]="iconStatus ? 'subtask-icon-circle' : 'subtask-icon'"> </div>
             <div class="subtask-text">
-            <input id="subtask-input" type="text" placeholder="Add task" />
+            <input #subtaskInput id="subtask-input" type="text" placeholder="Add task" (keyup.enter)=createSubtask(subtaskInput) (focus)=focusInPlus() (focusout)=focusOutPlus()/>
             </div>
         </div>
     </div>

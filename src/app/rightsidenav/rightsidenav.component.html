@@ -1,26 +1,35 @@
-<div class="right-sidenav none-display" id="toggle-right">
+<div class="right-sidenav" id="toggle-right" *ngIf="rightSideToggleStatus">
     <div class="steps-header">
 
         <div class="stepsHeading-container">
-             <div class="dynamic-subtask-icon" id="circle-icon">
+             <div class="dynamic-subtask-icon" [ngClass]="activeSubtask.checked ? 'dynamic-unchecked-subtask-icon' : 'dynamic-subtask-icon'" (click)=checkedSubtask()>
                  
              </div>
-             <div class="subtask-text" id="subtask-heading">
-                 Add step
+             <div class="subtask-text" [ngClass]="activeSubtask.checked ? 'text-linethrough' : 'subtask-text'">
+                 {{activeSubtask.subtaskName}}
              </div>
         </div>
      </div>
      <div class="right-scroll">
         <div id="list-of-steps">
-           <!-- Subtask-list -->
+            <div *ngFor="let step of activeSubtask.steps">
+                <div class="steps-container">
+                        <div class="dynamic-subtask-icon">
+
+                        </div>
+                        <div class="subtask-text">
+                            {{step.stepName}}
+                        </div>
+                </div>
+           </div>
         </div>
-        <input id="new-steps" type="text" placeholder="Add step" />
+        <input #stepInput id="new-steps" type="text" placeholder="Add step" (keyup.enter) = createStep(stepInput)/>
 
 
-         <div class="addToMyDay">
-             <div class="sunIcon"> </div>
-             <div class="myDayText">Add to My Day</div>
-         </div>
+        <div class="addToMyDay">
+            <div class="sunIcon"> </div>
+            <div class="myDayText">Add to My Day</div>
+        </div>
 
 
          <div class="dateTasks">
@@ -46,7 +55,6 @@
          <div class="notes">
              <textarea rows="2" cols="25" id="input-notes" type="text" placeholder="Add note" ></textarea>
          </div>
-
      </div>
 
     <div class="bottomDiv">

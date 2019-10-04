@@ -1,8 +1,8 @@
 <div class="container">
     <app-header></app-header>
     <div class="content-container">
-        <app-leftsidenav></app-leftsidenav>
-        <app-center-content></app-center-content>
-        <app-rightsidenav></app-rightsidenav>
+        <app-leftsidenav [middleContainer] = "centerContent"></app-leftsidenav>
+        <app-center-content #centerContent [rightSideNav] = "rightContent"></app-center-content>
+        <app-rightsidenav #rightContent></app-rightsidenav>
     </div>
 </div>
